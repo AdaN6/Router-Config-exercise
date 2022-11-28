@@ -1,8 +1,13 @@
-const express = require("express")
-const app = express()
-const pg = require("pg")
-const {Pool} = pg
+import "dotenv/config";
+import express from 'express';
+import sqlRouter from './routes/sqlRouter.js'
 
-const pool = new Pool();
+const server = express();
 
-app.listen(5000)
+const port = process.env.PORT || 5000;
+
+server.get('/', (req, res) => res.status(200).json({hello: "welcome to the Express"}));
+server.use('/sql', sqlRouter);
+
+
+server.listen(port, () => console.log(`Server connected to port ${port}`));
