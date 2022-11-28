@@ -9,7 +9,7 @@ sqlRouter
 .post(createUser);
 
 sqlRouter
-.route('./:id')
+.route('/:id')
 .get(getSingleUser)
 .put(updateUser)
 .delete(deleteUser)
