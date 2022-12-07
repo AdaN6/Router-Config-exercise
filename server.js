@@ -18,5 +18,4 @@ server.use((err, req, res, next) => {
     return res.status(500).send(`<h2>${err.message}</h2>`)
 } )
 
-
 server.listen(port, () => console.log(`Server connected to port ${port}`));
